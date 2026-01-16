@@ -43,6 +43,8 @@ body {
 .view {
   width: 100%;
   height: 100%;
+  user-select: none;
+  pointer-events: none;
   position: absolute;
   background: #fff;
   border-radius: 7px;
@@ -51,7 +53,7 @@ body {
   align-items: center;
   justify-content: center;
   backface-visibility: hidden;
-  transition: transform 0.4s;
+  transition: transform 0.25s linear;
 }
 
 .front-view span {
@@ -67,8 +69,8 @@ body {
   width: 45px;
 }
 
-/* FLIP */
-.card.flip:hover .front-view {
+/* hiermee doe ik de draai */
+.card.flip .front-view {
   transform: rotateY(180deg);
 }
 
