@@ -69,7 +69,7 @@ body {
   width: 45px;
 }
 
-/* hiermee doe ik de draai */
+/* hiermee doe ik de draai, maak het soepeler */
 .card.flip .front-view {
   transform: rotateY(180deg);
 }
@@ -77,3 +77,5 @@ body {
 .card:hover .back-view {
   transform: rotateY(0);
 }
+
+
