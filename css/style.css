@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 * {
   margin: 0;
@@ -8,24 +8,59 @@
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100vh;
   background: #6563ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper {
-  width: 400px;
-  height: 400px;
-  padding: 25px;
+  width: 420px;
+  padding: 20px;
   background: #f8f8f8;
-  border-radius: 10px;
+  border-radius: 12px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.score-box {
+  text-align: center;
+}
+
+.score-box p {
+  font-size: 12px;
+  color: #777;
+}
+
+.score-box span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #6563ff;
+}
+
+.reset {
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: #6563ff;
+  color: #fff;
+  cursor: pointer;
 }
 
 .cards {
+  list-style: none;
   width: 100%;
-  height: 100%;
+  height: 400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -33,31 +68,30 @@ body {
 }
 
 .card {
-  width: calc(100% / 4 - 10px);
-  height: calc(100% / 4 - 10px);
+  width: calc(25% - 10px);
+  height: calc(25% - 10px);
   position: relative;
   transform-style: preserve-3d;
   cursor: pointer;
 }
 
 .view {
+  position: absolute;
   width: 100%;
   height: 100%;
-  user-select: none;
-  pointer-events: none;
-  position: absolute;
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   backface-visibility: hidden;
-  transition: transform 0.25s linear;
+  transition: transform 0.35s ease;
+  pointer-events: none;
 }
 
 .front-view span {
-  font-size: 40px;
+  font-size: 38px;
   color: #6563ff;
 }
 
@@ -69,13 +103,10 @@ body {
   width: 45px;
 }
 
-/* hiermee doe ik de draai, maak het soepeler */
 .card.flip .front-view {
   transform: rotateY(180deg);
 }
 
-.card:hover .back-view {
+.card.flip .back-view {
   transform: rotateY(0);
 }
-
-
